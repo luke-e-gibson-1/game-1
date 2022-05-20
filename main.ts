@@ -1,4 +1,27 @@
-let mySprite = sprites.create(img`
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . 2 5 f 5 f 5 . . . . . . . 
+        . . . 2 1 f 1 f 1 f . . . . . . 
+        . . . 2 5 f 5 f 5 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, 100, 0)
+})
+let projectile: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(9)
+mySprite = sprites.create(img`
     ....................................................................................................
     ....................................................................................................
     ....................................444.44.44444....................................................
@@ -102,21 +125,3 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 scaling.scaleByPixels(mySprite, -20, ScaleDirection.Uniformly, ScaleAnchor.BottomLeft)
 controller.moveSprite(mySprite)
-let projectile = sprites.createProjectileFromSprite(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, mySprite, 50, 50)
